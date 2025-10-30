@@ -13,7 +13,15 @@ class ArtkPlugin(Star):
     @filter.command("artk_hp")
     async def artk_help(self, event: AstrMessageEvent):
         """Artk 帮助指令"""
-        yield event.plain_result("Artk Help")
+        help_text = (
+            "Artk Help\n"
+            "/artk_up <server_id> 更新服务器\n"
+            "/artk_ls 列出服务器\n"
+            "/artk_绑定 <用户名> 绑定Dream普通用户\n"
+            "/artk_绑定beta <用户名> 绑定Dream Beta用户\n"
+            "/artk_删除beta <用户名> 删除Dream Beta用户绑定"
+        )
+        yield event.plain_result(help_text)
 
     @filter.command("artk_up")
     async def artk_update_server(self, event: AstrMessageEvent):
